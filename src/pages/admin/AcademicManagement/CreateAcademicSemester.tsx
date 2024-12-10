@@ -5,6 +5,8 @@ import PHForm from "../../../components/form/PHForm.tsx";
 import PHSelect from "../../../components/form/PHSelect";
 import { nameOptions } from "../../../contants/semester.ts";
 import { monthOptions } from "../../../contants/globals.ts";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { academicSemesterSchema } from "../../../schemas/academicManagement.schema.ts";
 
 const currentYear = new Date().getFullYear();
 const yearOptions = [0, 1, 2, 3, 4].map((number) => ({
@@ -28,7 +30,10 @@ const CreateAcademicSemester = () => {
   return (
     <Flex justify="center" align="center">
       <Col span={6}>
-        <PHForm onSubmit={onSubmit}>
+        <PHForm
+          onSubmit={onSubmit}
+          resolver={zodResolver(academicSemesterSchema)}
+        >
           <PHSelect label={"Name"} name={"name"} options={nameOptions} />
           <PHSelect label="Year" name="year" options={yearOptions} />
           <PHSelect
