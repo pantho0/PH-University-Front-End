@@ -8,15 +8,16 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import PHform from "../components/form/PHform";
 import PHForm from "../components/form/PHform";
+import PHInput from "../components/form/PHInput";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-      id: "A-0001",
-      password: "admin123",
-    },
-  });
+  // const { register, handleSubmit } = useForm({
+  //   defaultValues: {
+  //     id: "A-0001",
+  //     password: "admin123",
+  //   },
+  // });
   const dispatch = useAppDispatch();
   const [login] = useLoginMutation();
 
@@ -40,12 +41,10 @@ const Login = () => {
   return (
     <PHForm onSubmit={onSubmit}>
       <div>
-        <label htmlFor="id">ID:</label>
-        <input type="text" id="id" {...register("id")} />
+        <PHInput type="text" name="id" label="ID:" />
       </div>
       <div>
-        <label htmlFor="password">PASSWORD:</label>
-        <input type="text" id="password" {...register("password")} />
+        <PHInput type="text" name="password" label="Password:" />
       </div>
       <Button htmlType="submit">Login</Button>
     </PHForm>
