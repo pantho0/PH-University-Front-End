@@ -6,18 +6,17 @@ import { setUser, TUser } from "../redux/features/auth/authSlice";
 import { verifyToken } from "../utils/verifyToken";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import PHform from "../components/form/PHform";
 import PHForm from "../components/form/PHform";
 import PHInput from "../components/form/PHInput";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const { register, handleSubmit } = useForm({
-  //   defaultValues: {
-  //     id: "A-0001",
-  //     password: "admin123",
-  //   },
-  // });
+
+  const defaultValues = {
+    id: "A-0001",
+    password: "admin123",
+  };
+
   const dispatch = useAppDispatch();
   const [login] = useLoginMutation();
 
@@ -40,7 +39,7 @@ const Login = () => {
   };
   return (
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
-      <PHForm onSubmit={onSubmit}>
+      <PHForm onSubmit={onSubmit} defaultValues={defaultValues}>
         <PHInput type="text" name="id" label="ID:" />
 
         <PHInput type="text" name="password" label="Password:" />
