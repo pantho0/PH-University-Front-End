@@ -4,9 +4,9 @@ import AcademicSemester from "../pages/admin/AcademicManagement/AcademicSemester
 import CreateAcademicDepartment from "../pages/admin/AcademicManagement/CreateAcademicDepartment";
 import CreateAcademicFaculty from "../pages/admin/AcademicManagement/CreateAcademicFaculty";
 import CreateAcademicSemester from "../pages/admin/AcademicManagement/CreateAcademicSemester";
-import CreateAdmin from "../pages/admin/CreateAdmin";
-import CreateFaculty from "../pages/admin/CreateFaculty";
-import CreateStudent from "../pages/admin/CreateStudent";
+import CreateAdmin from "../pages/admin/UserManagement/CreateAdmin";
+import CreateFaculty from "../pages/admin/UserManagement/CreateFaculty";
+import CreateStudent from "../pages/admin/UserManagement/CreateStudent";
 import Dashboard from "../pages/admin/Dashboard";
 
 export const adminPaths = [
